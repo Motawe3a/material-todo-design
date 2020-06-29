@@ -1,0 +1,45 @@
+.check {
+  color: #57f3b6;
+}
+.delete {
+  color: green;
+  &:hover {
+    color: red;
+  }
+}
+.completedTodo {
+  opacity: 0.3;
+  user-select: none;
+}
+.bottom-space:last-child {
+  padding-bottom: 50px !important;
+}
+
+::ng-deep .custom-frame {
+  & .mat-checkbox-background,
+  .mat-checkbox-frame {
+    border-radius: 70% !important;
+  }
+}
+
+::ng-deep
+  .mat-checkbox-checked.mat-accent
+  .mat-checkbox-ripple
+  .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #6bcfa9 !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #6bcfa9;
+}
+
+.hint-text {
+  color: green;
+  text-align: center;
+}
+.todo-item-edit {
+  padding: 5px 0 !important;
+  border: 1px solid green;
+}

@@ -1,0 +1,26 @@
+<mat-list>
+  <p class="hint-text">Double Click on Todo to Edit</p>
+  <h3 mat-subheader>
+    <app-date-header></app-date-header>
+  </h3>
+  <mat-list-item class="bottom-space" *ngFor="let todo of todos">
+    <p *ngIf="!todo.editing; else editingTodo" mat-line [ngClass]="{completedTodo: todo.completed === true}"
+      (dblclick)="editTodo(todo)">
+      {{todo.title}}
+    </p>
+    <ng-template #editingTodo>
+      <input matInput type="text" class="todo-item-edit" [(ngModel)]="todo.title" (blur)="doneEditTodo(todo)"
+        (keyup.enter)="doneEditTodo(todo)" (keyup.esc)="cancelEditTodo(todo)" autofocus>
+    </ng-template>
+
+    <mat-checkbox class="example-margin custom-frame" [checked]="todo.completed"
+      (change)="markComplete($event.checked,todo)">
+    </mat-checkbox>
+    <span> &nbsp;&nbsp;&nbsp;</span>
+    <span style="position:relative; right: 35x">
+      <a href="#" (click)="deleteItem(todo.id)">
+        <mat-icon mat-list-icon class="delete">delete</mat-icon>
+      </a>
+    </span>
+  </mat-list-item>
+</mat-list>

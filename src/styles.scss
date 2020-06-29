@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #f0efea;
+  width: 25%;
+  margin: auto;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.add-btn {
+  position: absolute;
+  right: 42%;
+  top: 93%;
+}
+
+.mat-button-base {
+  background-color: #53e5a6 !important;
+  color: #fff !important;
+}
+
+.mat-form-field-empty.mat-form-field-label {
+  color: green;
+}

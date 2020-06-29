@@ -1,0 +1,12 @@
+:host {
+  width: 100%;
+  .container {
+    display: inline-block;
+    float: left;
+    height: 36px;
+    margin: 0 10px;
+  }
+  h1 {
+    font-weight: 600;
+  }
+}
