@@ -1,4 +1,17 @@
-<div class="container">
+<div class="container" [ngClass]="{cssClass: group.value === 'rtl'}" [ngClass]="{
+  'direction-ltr':group.value === 'rtl',
+  'direction-rtl':group.value === 'ltr'
+}">
+  <div style="text-align: center;">
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+      <mat-button-toggle value="rtl" aria-label="Text align left">
+        <span>EN</span>
+      </mat-button-toggle>
+      <mat-button-toggle value="ltr" aria-label="Text align right">
+        <span>AR</span>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
   <app-tasks></app-tasks>
   <div class="add-btn">
     <button mat-fab color="primary" (click)="openDialog()">
